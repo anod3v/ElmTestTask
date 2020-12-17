@@ -211,20 +211,14 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return indexPaths
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let postFullSizeViewController = PostFullSizeViewController()
-//        let item = profilesAndItems[indexPath.row].newsItem
-//        let likes = String(describing: item.likes?.count)
-//        let text = item.text!
-//        guard let photos = item.attachments?.compactMap({$0?.postPhoto}) else { return }
-//        for photo in photos {
-//            let photoRepresentable = PhotoRepresentable(photo: photo, likes: likes, text: text)
-//            postFullSizeViewController.photos?.append(photoRepresentable)
-//        }
-//            postFullSizeViewController.selectedPostIndex = 0
-//
-//        self.show(postFullSizeViewController, sender: nil)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postFullSizeViewController = PostFullSizeViewController()
+        guard items.count >= 1 else { return }
+        let item = items[indexPath.row]
+        postFullSizeViewController.configure(item: item)
+
+        self.show(postFullSizeViewController, sender: nil)
+    }
     
 }
 

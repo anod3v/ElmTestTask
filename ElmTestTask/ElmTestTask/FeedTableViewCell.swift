@@ -14,30 +14,6 @@ class FeedTableViewCell: UITableViewCell {
     
     var isExpanded: Bool = false
     
-    //    var profileView: ProfileView = {
-    //        let view = ProfileView()
-    ////        view.backgroundColor = .brown
-    //
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-    //
-    //    var photoCollageView: PhotoCollageView = {
-    //        let view = PhotoCollageView()
-    ////        view.backgroundColor = .green
-    //
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-    //
-    //    var likeBarView: LikeBarView = {
-    //        let view = LikeBarView()
-    ////        view.backgroundColor = .orange
-    //
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-    
     var userIdLabel: UILabel = {
         let label = UILabel()
         //        label.font = Constants.Fonts.regularOfSize16
