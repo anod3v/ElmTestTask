@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26317D9BB08B1DFBDF80BEED /* Pods_ElmTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */; };
 		55E4237E258B927D006833DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4237D258B927D006833DE /* AppDelegate.swift */; };
 		55E42380258B927D006833DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4237F258B927D006833DE /* SceneDelegate.swift */; };
 		55E42382258B927D006833DE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42381258B927D006833DE /* FeedViewController.swift */; };
 		55E42387258B9281006833DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E42386258B9281006833DE /* Assets.xcassets */; };
 		55E4238A258B9281006833DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E42388258B9281006833DE /* LaunchScreen.storyboard */; };
+		55E42392258B968D006833DE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42391258B968D006833DE /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E4237A258B927D006833DE /* ElmTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElmTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E4237D258B927D006833DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E4237F258B927D006833DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		55E42386258B9281006833DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E42389258B9281006833DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55E4238B258B9281006833DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55E42391258B968D006833DE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		72BEE0062C5BE46B22C672B5 /* Pods-ElmTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmTestTask.release.xcconfig"; path = "Target Support Files/Pods-ElmTestTask/Pods-ElmTestTask.release.xcconfig"; sourceTree = "<group>"; };
+		87B3613A75AC1BC4A23EBEA5 /* Pods-ElmTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmTestTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmTestTask/Pods-ElmTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26317D9BB08B1DFBDF80BEED /* Pods_ElmTestTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				55E4237C258B927D006833DE /* ElmTestTask */,
 				55E4237B258B927D006833DE /* Products */,
+				623B118B7CB67927876E0820 /* Pods */,
+				ACFC9FB83C0E396D02BDECF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +66,30 @@
 				55E4237D258B927D006833DE /* AppDelegate.swift */,
 				55E4237F258B927D006833DE /* SceneDelegate.swift */,
 				55E42381258B927D006833DE /* FeedViewController.swift */,
+				55E42391258B968D006833DE /* NetworkService.swift */,
 				55E42386258B9281006833DE /* Assets.xcassets */,
 				55E42388258B9281006833DE /* LaunchScreen.storyboard */,
 				55E4238B258B9281006833DE /* Info.plist */,
 			);
 			path = ElmTestTask;
+			sourceTree = "<group>";
+		};
+		623B118B7CB67927876E0820 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87B3613A75AC1BC4A23EBEA5 /* Pods-ElmTestTask.debug.xcconfig */,
+				72BEE0062C5BE46B22C672B5 /* Pods-ElmTestTask.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ACFC9FB83C0E396D02BDECF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55E4238E258B9281006833DE /* Build configuration list for PBXNativeTarget "ElmTestTask" */;
 			buildPhases = (
+				BE5E1C1F7F5EB4CF039AEFD5 /* [CP] Check Pods Manifest.lock */,
 				55E42376258B927D006833DE /* Sources */,
 				55E42377258B927D006833DE /* Frameworks */,
 				55E42378258B927D006833DE /* Resources */,
+				B67ADEFEF709CC11EE48BACD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +159,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B67ADEFEF709CC11EE48BACD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ElmTestTask/Pods-ElmTestTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ElmTestTask/Pods-ElmTestTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ElmTestTask/Pods-ElmTestTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE5E1C1F7F5EB4CF039AEFD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ElmTestTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55E42376258B927D006833DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -136,6 +208,7 @@
 			files = (
 				55E42382258B927D006833DE /* FeedViewController.swift in Sources */,
 				55E4237E258B927D006833DE /* AppDelegate.swift in Sources */,
+				55E42392258B968D006833DE /* NetworkService.swift in Sources */,
 				55E42380258B927D006833DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +343,7 @@
 		};
 		55E4238F258B9281006833DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B3613A75AC1BC4A23EBEA5 /* Pods-ElmTestTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +362,7 @@
 		};
 		55E42390258B9281006833DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72BEE0062C5BE46B22C672B5 /* Pods-ElmTestTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
