@@ -14,10 +14,8 @@ class PostFullSizeViewController: UIViewController {
     
     var userIdLabel: UILabel = {
         let label = UILabel()
-        //        label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .systemYellow
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,10 +24,8 @@ class PostFullSizeViewController: UIViewController {
     
     var idLabel: UILabel = {
         let label = UILabel()
-        //            label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .systemRed
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -38,10 +34,8 @@ class PostFullSizeViewController: UIViewController {
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        //            label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .systemPink
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,10 +44,8 @@ class PostFullSizeViewController: UIViewController {
     
     var bodyLabel: UILabel = {
         let label = UILabel()
-        //            label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .systemTeal
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +55,7 @@ class PostFullSizeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         addViews()
         setupConstraints()
     }
@@ -88,12 +80,10 @@ class PostFullSizeViewController: UIViewController {
             userIdLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             userIdLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             userIdLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            //            userIdLabel.heightAnchor.constraint(equalToConstant: 50),
             
             idLabel.topAnchor.constraint(equalTo: userIdLabel.bottomAnchor, constant: 20),
             idLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             idLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            //            idLabel.heightAnchor.constraint(equalToConstant: 50),
             
             titleLabel.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -102,7 +92,6 @@ class PostFullSizeViewController: UIViewController {
             bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             bodyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             bodyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//            bodyLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             
         ])
     }
