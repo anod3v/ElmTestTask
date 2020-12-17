@@ -153,9 +153,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postFullSizeViewController = PostFullSizeViewController()
         guard items.count >= 1 else { return }
-        let item = items[indexPath.row]
-        postFullSizeViewController.configure(item: item)
-        
+
+        let itemKey = userSectionTitles[indexPath.section]
+        if let itemValues = userDictionary[itemKey] {
+        postFullSizeViewController.configure(item: itemValues[indexPath.row])
+        }
         self.show(postFullSizeViewController, sender: nil)
     }
     
