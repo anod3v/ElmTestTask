@@ -11,9 +11,9 @@ import PromiseKit
 
 class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     
-//    var networkService = NetworkService()
+    var networkService = NetworkService()
     
-    var feedService = FeedService()
+//    var feedService = FeedService()
     
     var items = [FeedItem]()
     
@@ -62,7 +62,7 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        feedService.getFeed().done { result in
+        networkService.getData(method: "posts").done { result in
             self.handleGetFeedResponse(items: result)
         }
         
@@ -88,7 +88,7 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     
     
     func handleGetFeedResponse(items: [FeedItem]) {
-        let items = items
+        self.items = items
 //        let profiles = profile.profiles
 //        let groups = group.groups
 //        self.nextFrom = item.nextFrom

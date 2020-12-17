@@ -6,12 +6,12 @@
 //  Copyright © 2020 Andrey Anoshkin. All rights reserved.
 //
 
-import Foundation
-import PromiseKit
-
-class FeedService: NetworkService {
-    
-    func getFeed() -> Promise<Array<FeedItem>> {
-        return getDataAndDecode(method: "posts")
-    }
-}
+//import Foundation
+//import PromiseKit
+//
+//class FeedService: NetworkService {
+//    
+//    func getFeed() -> Promise<[FeedItem]> {
+//        return getDataAndDecode(method: "posts")
+//    }
+//}
