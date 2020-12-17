@@ -18,7 +18,6 @@ class FeedTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-//        label.backgroundColor = .systemRed
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +28,6 @@ class FeedTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-//        label.backgroundColor = .systemPink
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +38,6 @@ class FeedTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-//        label.backgroundColor = .systemTeal
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
