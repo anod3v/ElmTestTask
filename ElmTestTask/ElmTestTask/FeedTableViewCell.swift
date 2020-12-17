@@ -43,7 +43,7 @@ class FeedTableViewCell: UITableViewCell {
         //        label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        //        label.backgroundColor = .systemYellow
+        label.backgroundColor = .systemYellow
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ class FeedTableViewCell: UITableViewCell {
         //            label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        //        label.backgroundColor = .systemYellow
+        label.backgroundColor = .systemRed
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +67,7 @@ class FeedTableViewCell: UITableViewCell {
         //            label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        //        label.backgroundColor = .systemYellow
+        label.backgroundColor = .systemPink
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +79,7 @@ class FeedTableViewCell: UITableViewCell {
         //            label.font = Constants.Fonts.regularOfSize16
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        //        label.backgroundColor = .systemYellow
+        label.backgroundColor = .systemTeal
         label.sizeToFit()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -130,10 +130,10 @@ class FeedTableViewCell: UITableViewCell {
     
     func configure(item: FeedItem) {
         isExpanded = false
-        userIdLabel.text = "User ID:" + String(item.userID)
-        idLabel.text = "Id:" + String(item.id)
-        titleLabel.text = "Title:" + item.title
-        bodyLabel.text = "Body:" + item.body
+        userIdLabel.text = "User ID: " + String(item.userID)
+        idLabel.text = "Id: " + String(item.id)
+        titleLabel.text = "Title: " + item.title
+        bodyLabel.text = "Body: " + item.body
         
         if bodyLabel.calculateMaxLines() <= 2 {
             showMoreButton.isHidden = true
@@ -142,46 +142,46 @@ class FeedTableViewCell: UITableViewCell {
         }
         bodyLabel.numberOfLines = 2
         
-//        likeBarView.likeCounterLabel.text = String(item.likes?.count ?? 0)
-//        likeBarView.viewsCounterLabel.text = String(item.views?.count ?? 0)
-//        
-//        if let photos = item.attachments?.compactMap({$0?.postPhoto})
-//        { photoCollageView.photos  = photos }
-//        
-//        photoCollageView.collectionView.reloadData()
+        //        likeBarView.likeCounterLabel.text = String(item.likes?.count ?? 0)
+        //        likeBarView.viewsCounterLabel.text = String(item.views?.count ?? 0)
+        //
+        //        if let photos = item.attachments?.compactMap({$0?.postPhoto})
+        //        { photoCollageView.photos  = photos }
+        //
+        //        photoCollageView.collectionView.reloadData()
     }
     
-//    func configureProfile(photo: String?, name: String?) {
-//
-//        let placeHolderImage = UIImage.gifImageWithName("spinner")
-//
-//        profileView.sourceName.text = name
-//        PhotoService.shared.photo(url: photo!) { image in
-//            self.profileView.sourceImage.image = image
-//        }
-//    }
+    //    func configureProfile(photo: String?, name: String?) {
+    //
+    //        let placeHolderImage = UIImage.gifImageWithName("spinner")
+    //
+    //        profileView.sourceName.text = name
+    //        PhotoService.shared.photo(url: photo!) { image in
+    //            self.profileView.sourceImage.image = image
+    //        }
+    //    }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
             
-            userIdLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            userIdLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            userIdLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            userIdLabel.heightAnchor.constraint(equalToConstant: 50),
+            userIdLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            userIdLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            userIdLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            userIdLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            idLabel.topAnchor.constraint(equalTo: userIdLabel.bottomAnchor),
-            idLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            idLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            idLabel.heightAnchor.constraint(equalTo: contentView.widthAnchor),
+            idLabel.topAnchor.constraint(equalTo: userIdLabel.bottomAnchor, constant: 20),
+            idLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            idLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            idLabel.heightAnchor.constraint(equalToConstant: 50),
             
             titleLabel.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             bodyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             bodyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-//            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            //            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             
             showMoreButton.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor),
             showMoreButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
