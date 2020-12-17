@@ -12,7 +12,6 @@ import PromiseKit
 class NetworkService {
     
     let baseHost: String = "jsonplaceholder.typicode.com"
-    //    var version: String { return "5.124" }
     let configuration = URLSessionConfiguration.default
     
     func getData(method: String, queryItems: [URLQueryItem] = []) -> Promise<FeedItems> {
@@ -20,14 +19,7 @@ class NetworkService {
         urlConstructor.scheme = "https"
         urlConstructor.host = self.baseHost
         urlConstructor.path = "/\(method)"
-        
-        //        urlConstructor.queryItems = [
-        //            URLQueryItem(name: "user_id", value: ApiManager.session.userId),
-        //            URLQueryItem(name: "access_token", value: ApiManager.session.token),
-        ////            URLQueryItem(name: "v", value: version),
-        //        ]
-        
-        
+
         urlConstructor.queryItems?.append(contentsOf: queryItems)
         
         let request = URLRequest(url: urlConstructor.url!)
@@ -45,9 +37,7 @@ class NetworkService {
                 do {
                     let response = try decoder.decode(FeedItems.self, from: data!)
                     seal.fulfill(response)
-//                    debugPrint(ApiManager.session.token)
                 } catch let decodingError {
-//                    ApiManager.session.eraseAll()
                     debugPrint(decodingError)
                     seal.reject(decodingError)
                 }

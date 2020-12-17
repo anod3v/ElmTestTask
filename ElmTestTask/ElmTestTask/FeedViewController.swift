@@ -11,6 +11,8 @@ import PromiseKit
 
 class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     
+    let rootView = FeedView()
+    
     var networkService = NetworkService()
     
     var items = [FeedItem]()
@@ -19,18 +21,26 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     
     var cell = UITableViewCell()
     
-    var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
     var userDictionary = [String: [FeedItem]]()
     
     var userSectionTitles = [String]()
     
     let cellID = "FeedTableViewCell"
+    
+    init() {
+        super.init(nibName: .none, bundle: .none)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        view = rootView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,27 +49,26 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
             self.handleGetFeedResponse(items: result)
         }
         
-        view.addSubview(tableView)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: cellID)
-        tableView.pin(to: view)
-        
         getUsersDictionary()
-
+        
     }
-
+    
+    func setup() {
+        rootView.tableView.delegate = self
+        rootView.tableView.dataSource = self
+        rootView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: cellID)
+    }
+    
     func handleGetFeedResponse(items: [FeedItem]) {
         self.items = items
         
-        DispatchQueue.main.async { self.tableView.reloadData() }
+        DispatchQueue.main.async { self.rootView.tableView.reloadData() }
     }
-
+    
     
     func revealPost(for cell: FeedTableViewCell) {
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        rootView.tableView.beginUpdates()
+        rootView.tableView.endUpdates()
     }
     
     func getUsersDictionary() {
@@ -71,7 +80,7 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
         userSectionTitles = [String]()
         
         itemsToDisplay = items
-
+        
         
         for item in itemsToDisplay {
             let itemKey = String(item.userID)
@@ -95,7 +104,6 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         getUsersDictionary()
         return userSectionTitles.count
     }
@@ -120,8 +128,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! FeedTableViewCell
         
         cell.delegate = self
-//
-//        let item = items[indexPath.row]
         
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let itemKey = userSectionTitles[indexPath.section]
@@ -143,13 +149,13 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         
         return indexPaths
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postFullSizeViewController = PostFullSizeViewController()
         guard items.count >= 1 else { return }
         let item = items[indexPath.row]
         postFullSizeViewController.configure(item: item)
-
+        
         self.show(postFullSizeViewController, sender: nil)
     }
     

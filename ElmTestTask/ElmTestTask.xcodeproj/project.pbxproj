@@ -15,6 +15,7 @@
 		554E6758258BAC0D00BA9874 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */; };
 		554E675A258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */; };
 		554E675C258BCB1500BA9874 /* PostFullSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */; };
+		558B522C258BF84C00FABBE3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558B522B258BF84C00FABBE3 /* FeedView.swift */; };
 		55E4237E258B927D006833DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4237D258B927D006833DE /* AppDelegate.swift */; };
 		55E42380258B927D006833DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4237F258B927D006833DE /* SceneDelegate.swift */; };
 		55E42382258B927D006833DE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42381258B927D006833DE /* FeedViewController.swift */; };
@@ -32,6 +33,7 @@
 		554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelNumberOfRowsExtension.swift; sourceTree = "<group>"; };
 		554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFullSizeViewController.swift; sourceTree = "<group>"; };
+		558B522B258BF84C00FABBE3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		55E4237A258B927D006833DE /* ElmTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElmTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E4237D258B927D006833DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E4237F258B927D006833DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */,
 				554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */,
 				55E42381258B927D006833DE /* FeedViewController.swift */,
+				558B522B258BF84C00FABBE3 /* FeedView.swift */,
 				554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */,
 				554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */,
 				55E42391258B968D006833DE /* NetworkService.swift */,
@@ -230,6 +233,7 @@
 				55E4237E258B927D006833DE /* AppDelegate.swift in Sources */,
 				554E675C258BCB1500BA9874 /* PostFullSizeViewController.swift in Sources */,
 				554E6756258BA6A300BA9874 /* UIViewConstraintsExtension.swift in Sources */,
+				558B522C258BF84C00FABBE3 /* FeedView.swift in Sources */,
 				55E42392258B968D006833DE /* NetworkService.swift in Sources */,
 				55E42380258B927D006833DE /* SceneDelegate.swift in Sources */,
 				554E6750258BA1B200BA9874 /* Response.swift in Sources */,
