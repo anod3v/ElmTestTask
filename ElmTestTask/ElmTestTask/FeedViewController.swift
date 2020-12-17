@@ -9,23 +9,25 @@
 import UIKit
 import PromiseKit
 
-class FeedViewController: UIViewController, NewsFeedTableViewCellDelegate {
+class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     
 //    var networkService = NetworkService()
     
-    var feedService = NewsFeedService()
+    var feedService = FeedService()
+    
+    var items = [FeedItem]()
     
 //    var newFeedItems = [Item]()
     
-    var newsFeedGroups = [Group]()
-    
-    var newsFeedProfiles = [Profile]()
-    
-    var photos = [String]()
-    
-    var profilesOfGroups = [ProfileInterface]()
-    
-    var profilesAndItems = [(profile: ProfileInterface?, newsItem: Item)]()
+//    var newsFeedGroups = [Group]()
+//
+//    var newsFeedProfiles = [Profile]()
+//
+//    var photos = [String]()
+//
+//    var profilesOfGroups = [ProfileInterface]()
+//
+//    var profilesAndItems = [(profile: ProfileInterface?, newsItem: Item)]()
     
     var cellHeight: CGFloat = 0
     
@@ -38,94 +40,94 @@ class FeedViewController: UIViewController, NewsFeedTableViewCellDelegate {
         return tableView
     }()
     
-    var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refreshNews), for: .valueChanged)
-        
-        return refreshControl
-    }()
+//    var refreshControl: UIRefreshControl = {
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(refreshNews), for: .valueChanged)
+//
+//        return refreshControl
+//    }()
     
-    let cellID = "NewsFeedTableViewCell"
+    let cellID = "FeedTableViewCell"
+//
+//    let headerID = "NewsFeedCollectionViewHeader"
+//
+//    var nextFrom = ""
     
-    let headerID = "NewsFeedCollectionViewHeader"
+//    var isLoading = false
     
-    var nextFrom = ""
-    
-    var isLoading = false
-    
-    var currentIndexPathRow: Int?
+//    var currentIndexPathRow: Int?
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newsFeedService.getNewsFeedItems().done { result in
-            self.handleGetNewsFeedResponse(item: result.0, profile: result.1, group: result.2)
+        feedService.getFeed().done { result in
+            self.handleGetFeedResponse(items: result)
         }
         
         view.addSubview(tableView)
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.prefetchDataSource = self
-        tableView.register(NewsFeedTableViewCell.self, forCellReuseIdentifier: cellID)
+//        tableView.prefetchDataSource = self
+        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.pin(to: view)
 
     }
     
-    @objc func refreshNews() {
-        
-        self.refreshControl.beginRefreshing()
-        newsFeedService.getNewsFeedItems().done { result in
-            
-            self.handleGetNewsFeedResponse(item: result.0, profile: result.1, group: result.2)
-        }
-    }
+//    @objc func refreshNews() {
+//
+////        self.refreshControl.beginRefreshing()
+//        newsFeedService.getNewsFeedItems().done { result in
+//
+//            self.handleGetNewsFeedResponse(item: result.0, profile: result.1, group: result.2)
+//        }
+//    }
     
     
     
-    func handleGetNewsFeedResponse(item: ItemResponse, profile: ProfileResponse, group: GroupResponse) {
-        let items = item.items
-        let profiles = profile.profiles
-        let groups = group.groups
-        self.nextFrom = item.nextFrom
-        
-        var profilesOrGroups = [ProfileInterface]()
-        
-//        let item = newFeedItems[indexPath.row]
-        for item in items {
-        
-        if item.sourceID! >= 0 {
-            profilesOrGroups = profiles
-        } else {
-            profilesOrGroups = groups
-        }
-        
-        let positiveSourceId = item.sourceID! >= 0 ? item.sourceID : (item.sourceID! * -1)
-        
-        let profileDataToDisplay = profilesOrGroups.first(where: {$0.id == positiveSourceId })
-            
-        let newElement = (profile: profileDataToDisplay, newsItem: item)
-            
-            if let photos = item.attachments?.compactMap({$0?.postPhoto}) {
-                cachePhotoImages(urls: photos)
-            }
-        
-        profilesAndItems.append(newElement)
-            
-        }
+    func handleGetFeedResponse(items: [FeedItem]) {
+        let items = items
+//        let profiles = profile.profiles
+//        let groups = group.groups
+//        self.nextFrom = item.nextFrom
+//
+//        var profilesOrGroups = [ProfileInterface]()
+//
+////        let item = newFeedItems[indexPath.row]
+//        for item in items {
+//
+//        if item.sourceID! >= 0 {
+//            profilesOrGroups = profiles
+//        } else {
+//            profilesOrGroups = groups
+//        }
+//
+//        let positiveSourceId = item.sourceID! >= 0 ? item.sourceID : (item.sourceID! * -1)
+//
+//        let profileDataToDisplay = profilesOrGroups.first(where: {$0.id == positiveSourceId })
+//
+//        let newElement = (profile: profileDataToDisplay, newsItem: item)
+//
+//            if let photos = item.attachments?.compactMap({$0?.postPhoto}) {
+//                cachePhotoImages(urls: photos)
+//            }
+//
+//        profilesAndItems.append(newElement)
+//
+//        }
         
         DispatchQueue.main.async { self.tableView.reloadData() }
     }
     
-    func cachePhotoImages(urls: [String]) {
-        for url in urls {
-            PhotoService.shared.photo(url: url) { image in
-                // images saved in photoService cache
-            }
-        }
-    }
+//    func cachePhotoImages(urls: [String]) {
+//        for url in urls {
+//            PhotoService.shared.photo(url: url) { image in
+//                // images saved in photoService cache
+//            }
+//        }
+//    }
     
 //    func handleGetNewsFeedNextResponse(item: ItemResponse, profile: ProfileResponse, group: GroupResponse) {
 //        self.newFeedItems.append(contentsOf: item.items)
@@ -136,7 +138,7 @@ class FeedViewController: UIViewController, NewsFeedTableViewCellDelegate {
 //        DispatchQueue.main.async { self.tableView.reloadData() }
 //    }
     
-    func revealPost(for cell: NewsFeedTableViewCell) {
+    func revealPost(for cell: FeedTableViewCell) {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
@@ -144,15 +146,15 @@ class FeedViewController: UIViewController, NewsFeedTableViewCellDelegate {
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profilesAndItems.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! NewsFeedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! FeedTableViewCell
         
         cell.delegate = self
         
-        let item = profilesAndItems[indexPath.row]
+        let item = items[indexPath.row]
         
 //        if item.sourceID! >= 0 {
 //            profilesOfGroups = newsFeedProfiles
@@ -164,9 +166,9 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 //
 //        let dataToDisplay = profilesOfGroups.first(where: {$0.id == positiveSourceId })
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.configure(item: item.newsItem)
-        cell.configureProfile(photo: item.profile?.photo, name: item.profile?.name)
-        cell.photoCollageView.isUserInteractionEnabled = false
+        cell.configure(item: item)
+//        cell.configureProfile(photo: item.profile?.photo, name: item.profile?.name)
+//        cell.photoCollageView.isUserInteractionEnabled = false
         
 //        currentIndexPathRow = indexPath.row
 //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToVC(_:)))
@@ -209,51 +211,51 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return indexPaths
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postFullSizeViewController = PostFullSizeViewController()
-        let item = profilesAndItems[indexPath.row].newsItem
-        let likes = String(describing: item.likes?.count)
-        let text = item.text!
-        guard let photos = item.attachments?.compactMap({$0?.postPhoto}) else { return }
-        for photo in photos {
-            let photoRepresentable = PhotoRepresentable(photo: photo, likes: likes, text: text)
-            postFullSizeViewController.photos?.append(photoRepresentable)
-        }
-            postFullSizeViewController.selectedPostIndex = 0
-        
-        self.show(postFullSizeViewController, sender: nil)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let postFullSizeViewController = PostFullSizeViewController()
+//        let item = profilesAndItems[indexPath.row].newsItem
+//        let likes = String(describing: item.likes?.count)
+//        let text = item.text!
+//        guard let photos = item.attachments?.compactMap({$0?.postPhoto}) else { return }
+//        for photo in photos {
+//            let photoRepresentable = PhotoRepresentable(photo: photo, likes: likes, text: text)
+//            postFullSizeViewController.photos?.append(photoRepresentable)
+//        }
+//            postFullSizeViewController.selectedPostIndex = 0
+//
+//        self.show(postFullSizeViewController, sender: nil)
+//    }
     
 }
 
-extension FeedViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        
-        for indexPath in indexPaths {
-
-        guard indexPath.row == profilesAndItems.count - 1 else { return }
-        
-        guard !isLoading else { return }
-        
-//        if indexPath.row == newFeedItems.count - 1 {
-            let lastIndex = indexPath.row
-            isLoading = true
-            firstly {
-                newsFeedService.getNewsFeedItemsWithStartTime(startFrom: nextFrom)
-            }.done { (result) in
-                
-                self.handleGetNewsFeedResponse(item: result.0, profile: result.1, group: result.2)
-                
-                let indexPaths = self.makeIndexSet(lastIndex: lastIndex, result.0.items.count)
-                tableView.insertRows(at: indexPaths, with: .automatic)
-                self.isLoading = false
-            }.catch { (error) in
-                debugPrint(error.localizedDescription)
-                self.isLoading = false
-            }
-//        }
-    }
-}
-}
+//extension FeedViewController: UITableViewDataSourcePrefetching {
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//
+//        for indexPath in indexPaths {
+//
+//        guard indexPath.row == profilesAndItems.count - 1 else { return }
+//
+//        guard !isLoading else { return }
+//
+////        if indexPath.row == newFeedItems.count - 1 {
+//            let lastIndex = indexPath.row
+//            isLoading = true
+//            firstly {
+//                newsFeedService.getNewsFeedItemsWithStartTime(startFrom: nextFrom)
+//            }.done { (result) in
+//
+//                self.handleGetNewsFeedResponse(item: result.0, profile: result.1, group: result.2)
+//
+//                let indexPaths = self.makeIndexSet(lastIndex: lastIndex, result.0.items.count)
+//                tableView.insertRows(at: indexPaths, with: .automatic)
+//                self.isLoading = false
+//            }.catch { (error) in
+//                debugPrint(error.localizedDescription)
+//                self.isLoading = false
+//            }
+////        }
+//    }
+//}
+//}
 
 

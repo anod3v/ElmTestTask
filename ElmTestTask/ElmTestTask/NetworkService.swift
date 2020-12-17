@@ -54,11 +54,11 @@ class NetworkService {
         return Promise { seal in
             
             do {
-                let response = try decoder.decode(VKResponse<Output>.self, from: data)
+                let response = try decoder.decode(Response<Output>.self, from: data)
                 seal.fulfill(response.data)
 //                debugPrint(ApiManager.session.token)
             } catch let decodingError {
-                ApiManager.session.eraseAll()
+//                ApiManager.session.eraseAll()
                 debugPrint(decodingError)
                 seal.reject(decodingError)
             }

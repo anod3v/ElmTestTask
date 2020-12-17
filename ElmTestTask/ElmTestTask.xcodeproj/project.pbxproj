@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		26317D9BB08B1DFBDF80BEED /* Pods_ElmTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */; };
+		554E6750258BA1B200BA9874 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E674F258BA1B200BA9874 /* Response.swift */; };
+		554E6752258BA2A800BA9874 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6751258BA2A800BA9874 /* FeedService.swift */; };
+		554E6754258BA33500BA9874 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6753258BA33500BA9874 /* FeedItem.swift */; };
+		554E6756258BA6A300BA9874 /* UIViewConstraintsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */; };
+		554E6758258BAC0D00BA9874 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */; };
+		554E675A258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */; };
 		55E4237E258B927D006833DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4237D258B927D006833DE /* AppDelegate.swift */; };
 		55E42380258B927D006833DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4237F258B927D006833DE /* SceneDelegate.swift */; };
 		55E42382258B927D006833DE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42381258B927D006833DE /* FeedViewController.swift */; };
@@ -18,6 +24,12 @@
 
 /* Begin PBXFileReference section */
 		098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		554E674F258BA1B200BA9874 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		554E6751258BA2A800BA9874 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		554E6753258BA33500BA9874 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewConstraintsExtension.swift; sourceTree = "<group>"; };
+		554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelNumberOfRowsExtension.swift; sourceTree = "<group>"; };
 		55E4237A258B927D006833DE /* ElmTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElmTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E4237D258B927D006833DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E4237F258B927D006833DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +77,14 @@
 			children = (
 				55E4237D258B927D006833DE /* AppDelegate.swift */,
 				55E4237F258B927D006833DE /* SceneDelegate.swift */,
+				554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */,
+				554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */,
 				55E42381258B927D006833DE /* FeedViewController.swift */,
+				554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */,
 				55E42391258B968D006833DE /* NetworkService.swift */,
+				554E674F258BA1B200BA9874 /* Response.swift */,
+				554E6751258BA2A800BA9874 /* FeedService.swift */,
+				554E6753258BA33500BA9874 /* FeedItem.swift */,
 				55E42386258B9281006833DE /* Assets.xcassets */,
 				55E42388258B9281006833DE /* LaunchScreen.storyboard */,
 				55E4238B258B9281006833DE /* Info.plist */,
@@ -80,7 +98,6 @@
 				87B3613A75AC1BC4A23EBEA5 /* Pods-ElmTestTask.debug.xcconfig */,
 				72BEE0062C5BE46B22C672B5 /* Pods-ElmTestTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,8 +225,14 @@
 			files = (
 				55E42382258B927D006833DE /* FeedViewController.swift in Sources */,
 				55E4237E258B927D006833DE /* AppDelegate.swift in Sources */,
+				554E6756258BA6A300BA9874 /* UIViewConstraintsExtension.swift in Sources */,
 				55E42392258B968D006833DE /* NetworkService.swift in Sources */,
 				55E42380258B927D006833DE /* SceneDelegate.swift in Sources */,
+				554E6750258BA1B200BA9874 /* Response.swift in Sources */,
+				554E6754258BA33500BA9874 /* FeedItem.swift in Sources */,
+				554E6758258BAC0D00BA9874 /* FeedTableViewCell.swift in Sources */,
+				554E6752258BA2A800BA9874 /* FeedService.swift in Sources */,
+				554E675A258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

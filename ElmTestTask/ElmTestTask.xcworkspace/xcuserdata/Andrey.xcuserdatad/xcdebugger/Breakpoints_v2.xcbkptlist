@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "96CEED68-9B84-4812-BA49-7AE9D5493B81"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A3788FA-257C-48BE-8270-61A5D21EF185"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/Response.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "Response"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "9A3788FA-257C-48BE-8270-61A5D21EF185 - e12964b3c5e9baec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmTestTask.Response.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;ElmTestTask.Response&lt;A&gt;.CodingKeys&gt;"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/Response.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "9A3788FA-257C-48BE-8270-61A5D21EF185 - c53aee1d29bb4320"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmTestTask.Response.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/Response.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2623FB23-8406-4A08-B7B1-F3BC55CDB6E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getData(method:queryItems:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D6E41B4-851A-4550-81CD-508CFADE922C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getData(method:queryItems:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7D6E41B4-851A-4550-81CD-508CFADE922C - d9c891c52790bf46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmTestTask.NetworkService.getData(method: Swift.String, queryItems: Swift.Array&lt;Foundation.URLQueryItem&gt;) -&gt; PromiseKit.Promise&lt;Foundation.Data&gt;"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1526">
+               </Location>
+               <Location
+                  uuid = "7D6E41B4-851A-4550-81CD-508CFADE922C - b055779b80899bb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PromiseKit.Resolver&lt;Foundation.Data&gt;) -&gt; () in ElmTestTask.NetworkService.getData(method: Swift.String, queryItems: Swift.Array&lt;Foundation.URLQueryItem&gt;) -&gt; PromiseKit.Promise&lt;Foundation.Data&gt;"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "110">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EE5AD57-3E60-416E-98F6-F797253763D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "decodeData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "248BF3F9-79AE-489B-95F5-64835C83CED8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "decodeData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5B2ED79-5ED3-4DBC-8462-0BFF6CA73CAB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "getDataAndDecode(method:queryItems:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5B2ED79-5ED3-4DBC-8462-0BFF6CA73CAB - aeb5514ecf5b6e20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmTestTask.NetworkService.getDataAndDecode&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(method: Swift.String, queryItems: Swift.Array&lt;Foundation.URLQueryItem&gt;) -&gt; PromiseKit.Promise&lt;A&gt;"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "294">
+               </Location>
+               <Location
+                  uuid = "B5B2ED79-5ED3-4DBC-8462-0BFF6CA73CAB - 5b072cd4fa835c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; PromiseKit.Promise&lt;Foundation.Data&gt; in ElmTestTask.NetworkService.getDataAndDecode&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(method: Swift.String, queryItems: Swift.Array&lt;Foundation.URLQueryItem&gt;) -&gt; PromiseKit.Promise&lt;A&gt;"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04F6BA0D-25CD-47FD-A62B-76ACDA2A20A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/FeedItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "FeedItem"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "04F6BA0D-25CD-47FD-A62B-76ACDA2A20A7 - 52bf7ecae464c849"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmTestTask.FeedItem.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;ElmTestTask.FeedItem.CodingKeys&gt;"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/FeedItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "04F6BA0D-25CD-47FD-A62B-76ACDA2A20A7 - d5fd793f7ca50288"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElmTestTask.FeedItem.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "ElmTestTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/Geekbrains/!.%20TestTasks/1.%20ElmSoft/ElmTestTask/ElmTestTask/ElmTestTask/FeedItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F2775F9-A7B7-4D73-A2E1-C93714B5A7DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElmTestTask/FeedService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "getFeed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
