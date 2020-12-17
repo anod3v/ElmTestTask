@@ -20,7 +20,7 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     var cell = UITableViewCell()
     
     var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -82,7 +82,6 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
                 userDictionary[itemKey] = [item]
             }
             userSectionTitles = [String](userDictionary.keys)
-//            userSectionTitles = userSectionTitles.sorted(by: { $0 < $1 })
             
             userSectionTitles = userSectionTitles.sorted {
                 (s1, s2) -> Bool in return s1.localizedStandardCompare(s2) == .orderedAscending
@@ -102,7 +101,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return userSectionTitles[section]
+        return "USER ID:" + userSectionTitles[section]
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
