@@ -82,7 +82,11 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
                 userDictionary[itemKey] = [item]
             }
             userSectionTitles = [String](userDictionary.keys)
-            userSectionTitles = userSectionTitles.sorted(by: { $0 < $1 })
+//            userSectionTitles = userSectionTitles.sorted(by: { $0 < $1 })
+            
+            userSectionTitles = userSectionTitles.sorted {
+                (s1, s2) -> Bool in return s1.localizedStandardCompare(s2) == .orderedAscending
+            }
         }
         
     }
