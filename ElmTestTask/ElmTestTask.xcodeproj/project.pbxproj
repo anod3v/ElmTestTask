@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26317D9BB08B1DFBDF80BEED /* Pods_ElmTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */; };
-		554E6750258BA1B200BA9874 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E674F258BA1B200BA9874 /* Response.swift */; };
-		554E6752258BA2A800BA9874 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6751258BA2A800BA9874 /* FeedService.swift */; };
 		554E6754258BA33500BA9874 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6753258BA33500BA9874 /* FeedItem.swift */; };
-		554E6756258BA6A300BA9874 /* UIViewConstraintsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */; };
 		554E6758258BAC0D00BA9874 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */; };
 		554E675A258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */; };
 		554E675C258BCB1500BA9874 /* PostFullSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */; };
@@ -27,10 +24,7 @@
 
 /* Begin PBXFileReference section */
 		098FC3AA3214D04EA04CDE85 /* Pods_ElmTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		554E674F258BA1B200BA9874 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		554E6751258BA2A800BA9874 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		554E6753258BA33500BA9874 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewConstraintsExtension.swift; sourceTree = "<group>"; };
 		554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelNumberOfRowsExtension.swift; sourceTree = "<group>"; };
 		554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFullSizeViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +54,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		558B522F258C04C300FABBE3 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				55E42381258B927D006833DE /* FeedViewController.swift */,
+				558B522B258BF84C00FABBE3 /* FeedView.swift */,
+				554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		558B5230258C04F000FABBE3 /* PostFullSize */ = {
+			isa = PBXGroup;
+			children = (
+				554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */,
+				558B522D258BFBCB00FABBE3 /* PostFullSizeView.swift */,
+			);
+			path = PostFullSize;
+			sourceTree = "<group>";
+		};
+		558B5231258C051100FABBE3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				558B5233258C052C00FABBE3 /* Entities */,
+				558B5232258C051B00FABBE3 /* Api */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		558B5232258C051B00FABBE3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				55E42391258B968D006833DE /* NetworkService.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		558B5233258C052C00FABBE3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				554E6753258BA33500BA9874 /* FeedItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		558B5234258C059E00FABBE3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		55E42371258B927D006833DE = {
 			isa = PBXGroup;
 			children = (
@@ -83,17 +129,10 @@
 			children = (
 				55E4237D258B927D006833DE /* AppDelegate.swift */,
 				55E4237F258B927D006833DE /* SceneDelegate.swift */,
-				554E6755258BA6A300BA9874 /* UIViewConstraintsExtension.swift */,
-				554E6759258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift */,
-				55E42381258B927D006833DE /* FeedViewController.swift */,
-				558B522B258BF84C00FABBE3 /* FeedView.swift */,
-				554E6757258BAC0D00BA9874 /* FeedTableViewCell.swift */,
-				554E675B258BCB1500BA9874 /* PostFullSizeViewController.swift */,
-				558B522D258BFBCB00FABBE3 /* PostFullSizeView.swift */,
-				55E42391258B968D006833DE /* NetworkService.swift */,
-				554E674F258BA1B200BA9874 /* Response.swift */,
-				554E6751258BA2A800BA9874 /* FeedService.swift */,
-				554E6753258BA33500BA9874 /* FeedItem.swift */,
+				558B5234258C059E00FABBE3 /* Utilities */,
+				558B522F258C04C300FABBE3 /* Feed */,
+				558B5230258C04F000FABBE3 /* PostFullSize */,
+				558B5231258C051100FABBE3 /* Network */,
 				55E42386258B9281006833DE /* Assets.xcassets */,
 				55E42388258B9281006833DE /* LaunchScreen.storyboard */,
 				55E4238B258B9281006833DE /* Info.plist */,
@@ -235,15 +274,12 @@
 				55E42382258B927D006833DE /* FeedViewController.swift in Sources */,
 				55E4237E258B927D006833DE /* AppDelegate.swift in Sources */,
 				554E675C258BCB1500BA9874 /* PostFullSizeViewController.swift in Sources */,
-				554E6756258BA6A300BA9874 /* UIViewConstraintsExtension.swift in Sources */,
 				558B522E258BFBCB00FABBE3 /* PostFullSizeView.swift in Sources */,
 				558B522C258BF84C00FABBE3 /* FeedView.swift in Sources */,
 				55E42392258B968D006833DE /* NetworkService.swift in Sources */,
 				55E42380258B927D006833DE /* SceneDelegate.swift in Sources */,
-				554E6750258BA1B200BA9874 /* Response.swift in Sources */,
 				554E6754258BA33500BA9874 /* FeedItem.swift in Sources */,
 				554E6758258BAC0D00BA9874 /* FeedTableViewCell.swift in Sources */,
-				554E6752258BA2A800BA9874 /* FeedService.swift in Sources */,
 				554E675A258BAFED00BA9874 /* UILabelNumberOfRowsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,21 +11,21 @@ import PromiseKit
 
 class FeedViewController: UIViewController, FeedTableViewCellDelegate {
     
-    let rootView = FeedView()
+    private let rootView = FeedView()
     
-    var networkService = NetworkService()
+    private(set) var networkService = NetworkService()
     
-    var items = [FeedItem]()
+    private(set) var items = [FeedItem]()
     
-    var cellHeight: CGFloat = 0
+    private(set) var cellHeight: CGFloat = 0
     
-    var cell = UITableViewCell()
+    private(set) var cell = UITableViewCell()
     
-    var userDictionary = [String: [FeedItem]]()
+    private(set) var userDictionary = [String: [FeedItem]]()
     
-    var userSectionTitles = [String]()
+    private(set) var userSectionTitles = [String]()
     
-    let cellID = "FeedTableViewCell"
+    private let cellID = "FeedTableViewCell"
     
     init() {
         super.init(nibName: .none, bundle: .none)

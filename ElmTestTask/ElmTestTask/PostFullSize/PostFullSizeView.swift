@@ -10,7 +10,7 @@ import UIKit
 
 class PostFullSizeView: UIView {
     
-    var userIdLabel: UILabel = {
+    private(set) var userIdLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -20,7 +20,7 @@ class PostFullSizeView: UIView {
         return label
     }()
     
-    var idLabel: UILabel = {
+    private(set) var idLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -30,7 +30,7 @@ class PostFullSizeView: UIView {
         return label
     }()
     
-    var titleLabel: UILabel = {
+    private(set) var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -40,7 +40,7 @@ class PostFullSizeView: UIView {
         return label
     }()
     
-    var bodyLabel: UILabel = {
+    private(set) var bodyLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping

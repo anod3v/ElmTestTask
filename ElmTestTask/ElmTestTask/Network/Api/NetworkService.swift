@@ -11,8 +11,8 @@ import PromiseKit
 
 class NetworkService {
     
-    let baseHost: String = "jsonplaceholder.typicode.com"
-    let configuration = URLSessionConfiguration.default
+    private let baseHost: String = "jsonplaceholder.typicode.com"
+    private let configuration = URLSessionConfiguration.default
     
     func getData(method: String, queryItems: [URLQueryItem] = []) -> Promise<FeedItems> {
         var urlConstructor = URLComponents()

@@ -12,9 +12,9 @@ class FeedTableViewCell: UITableViewCell {
     
     weak var delegate: FeedTableViewCellDelegate?
     
-    var isExpanded: Bool = false
+    private(set) var isExpanded: Bool = false
     
-    var idLabel: UILabel = {
+    private(set) var idLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -24,7 +24,7 @@ class FeedTableViewCell: UITableViewCell {
         return label
     }()
     
-    var titleLabel: UILabel = {
+    private(set) var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -34,7 +34,7 @@ class FeedTableViewCell: UITableViewCell {
         return label
     }()
     
-    var bodyLabel: UILabel = {
+    private(set) var bodyLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -44,7 +44,7 @@ class FeedTableViewCell: UITableViewCell {
         return label
     }()
     
-    var showMoreButton: UIButton = {
+    private(set) var showMoreButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         button.titleLabel?.alpha = 0.5
@@ -95,7 +95,7 @@ class FeedTableViewCell: UITableViewCell {
             showMoreButton.isHidden = false
         }
         bodyLabel.numberOfLines = 2
-
+        
     }
     
     func setupConstraints() {

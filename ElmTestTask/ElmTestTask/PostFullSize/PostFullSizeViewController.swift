@@ -10,7 +10,7 @@ import UIKit
 
 class PostFullSizeViewController: UIViewController {
     
-    let rootView = PostFullSizeView()
+    private let rootView = PostFullSizeView()
     
     override func loadView() {
         super.loadView()
