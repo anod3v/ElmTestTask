@@ -130,10 +130,10 @@ class FeedTableViewCell: UITableViewCell {
     
     func configure(item: FeedItem) {
         isExpanded = false
-        userIdLabel.text = String(item.userID)
-        idLabel.text = String(item.id)
-        titleLabel.text = item.title
-        bodyLabel.text = item.body
+        userIdLabel.text = "User ID:" + String(item.userID)
+        idLabel.text = "Id:" + String(item.id)
+        titleLabel.text = "Title:" + item.title
+        bodyLabel.text = "Body:" + item.body
         
         if bodyLabel.calculateMaxLines() <= 2 {
             showMoreButton.isHidden = true
@@ -181,7 +181,12 @@ class FeedTableViewCell: UITableViewCell {
             bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             bodyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             bodyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+//            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            
+            showMoreButton.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor),
+            showMoreButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            showMoreButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            showMoreButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             
         ])
     }
