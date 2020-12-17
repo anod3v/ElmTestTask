@@ -26,6 +26,10 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
         return tableView
     }()
     
+    var userDictionary = [String: [FeedItem]]()
+    
+    var userSectionTitles = [String]()
+    
     let cellID = "FeedTableViewCell"
     
     override func viewDidLoad() {
@@ -41,6 +45,8 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
         tableView.dataSource = self
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.pin(to: view)
+        
+        getUsersDictionary()
 
     }
 
@@ -55,22 +61,70 @@ class FeedViewController: UIViewController, FeedTableViewCellDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
+    func getUsersDictionary() {
+        
+        var itemsToDisplay = [FeedItem]()
+        
+        userDictionary = [String: [FeedItem]]()
+        
+        userSectionTitles = [String]()
+        
+        itemsToDisplay = items
+
+        
+        for item in itemsToDisplay {
+            let itemKey = String(item.userID)
+            if var itemValues = userDictionary[itemKey] {
+                itemValues.append(item)
+                userDictionary[itemKey] = itemValues
+            } else {
+                userDictionary[itemKey] = [item]
+            }
+            userSectionTitles = [String](userDictionary.keys)
+            userSectionTitles = userSectionTitles.sorted(by: { $0 < $1 })
+        }
+        
+    }
+    
 }
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        getUsersDictionary()
+        return userSectionTitles.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return userSectionTitles[section]
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return userSectionTitles
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        let itemKey = userSectionTitles[section]
+        if let itemValues = userDictionary[itemKey] {
+            return itemValues.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! FeedTableViewCell
         
         cell.delegate = self
-        
-        let item = items[indexPath.row]
+//
+//        let item = items[indexPath.row]
         
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.configure(item: item)
+        let itemKey = userSectionTitles[indexPath.section]
+        if let itemValues = userDictionary[itemKey] {
+            cell.configure(item: itemValues[indexPath.row])
+        }
         
         return cell
     }
