@@ -143,13 +143,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return cell.bounds.size.height
     }
     
-    private func makeIndexSet(lastIndex: Int, _ newsCount: Int) -> [IndexPath] {
-        let last = lastIndex + newsCount
-        let indexPaths = Array(lastIndex + 1...last).map { IndexPath(row: $0, section: 0) }
-        
-        return indexPaths
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postFullSizeViewController = PostFullSizeViewController()
         guard items.count >= 1 else { return }
